@@ -1,0 +1,82 @@
+<div class="container">
+  <aside class="form">
+      <header><p>Registracion</p></header>
+      <section class="name-surname">
+          <input
+          [(ngModel)] = "student.FirstName"
+          class="inp" type="text" placeholder="Firstname">
+          <input
+          [(ngModel)] = "student.LastName"
+          class="inp" type="text" placeholder="Lastname">
+      </section>
+      <section class="phone">
+          <input
+          [(ngModel)] = "student.PhoneNumber"
+          class="inp" type="text" placeholder="Phone number">
+      </section>
+      <section class="gender-age-gpa">
+          <input
+          [(ngModel)] = "student.Gender"
+          type="text" class="inp" placeholder="Gender">
+          <input
+          [(ngModel)] = "student.Age" 
+          type="text" class="inp" placeholder="Age">
+          <input
+          [(ngModel)] = "student.GPA"
+          type="text" class="inp" placeholder="GPA">
+      </section>
+      <section class="university">
+          <input
+          [(ngModel)] = "student.University"
+          type="text" placeholder="University" class="inp">
+      </section>
+      <section class="image">
+          <input
+          [(ngModel)] = "student.Image"
+          type="text" class="inp" placeholder="Img/url">
+      </section>
+      <section class="subBtn">
+          <button (click)="subBtn()">SUBMIT</button>
+      </section>
+  </aside>
+
+  <aside *ngIf="showCard" class="card">
+      <img [src]="student.Image" alt="">
+      <div class="userData">
+          <section class="top">
+              <div>
+                  <p>Firstname</p>
+                  <section class="dataSec">{{student.FirstName}}</section>
+              </div>
+              <div>
+                  <p>Lastname</p>
+                  <section class="dataSec">{{student.LastName}}</section>
+              </div>
+          </section>
+          <section class="middle">
+              <div>
+                  <p>Gender</p>
+                  <section class="dataSec">{{student.Gender}}</section>
+              </div>
+              <div>
+                  <p>Age</p>
+                  <section class="dataSec">{{student.Age}}</section>
+              </div>
+              <div>
+                  <p>GPA</p>
+                  <section class="dataSec">{{student.GPA}}</section>
+              </div>
+          </section>
+          <section class="bottom">
+              <div>
+                  <p>Phone number</p>
+                  <section class="dataSec">{{student.PhoneNumber}}</section>
+              </div>
+              <div>
+                  <p>University</p>
+                  <section class="dataSec">{{student.University}}</section>
+              </div>
+          </section>
+      </div>
+  </aside>
+</div>
